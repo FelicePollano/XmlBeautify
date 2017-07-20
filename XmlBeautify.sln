@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlBeautify", "XmlBeautify\XmlBeautify.csproj", "{FF5D54C0-3B45-4ABD-BBEB-63B32464F483}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gen-schema", "gen-schema\gen-schema.csproj", "{20670ECF-0388-4356-96B5-BFD0F5187C2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF5D54C0-3B45-4ABD-BBEB-63B32464F483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5D54C0-3B45-4ABD-BBEB-63B32464F483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5D54C0-3B45-4ABD-BBEB-63B32464F483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF5D54C0-3B45-4ABD-BBEB-63B32464F483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20670ECF-0388-4356-96B5-BFD0F5187C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20670ECF-0388-4356-96B5-BFD0F5187C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20670ECF-0388-4356-96B5-BFD0F5187C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20670ECF-0388-4356-96B5-BFD0F5187C2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
