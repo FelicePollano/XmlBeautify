@@ -15,10 +15,12 @@ namespace check_schema
         static void Main(string[] args)
         {
             logger = new Logger();
-            Console.Error.WriteLine("check xml against xsd");
-            Console.Error.WriteLine("2017 Felice Pollano");
+            Console.WriteLine("check xml against xsd");
+            Console.WriteLine("2017 Felice Pollano");
             if (args.Length == 0)
                 Console.Error.WriteLine("Specify at least one file to operate on. xsd files will automatically treated as schema!");
+            List<string> toValidate = new List<string>();
+            XmlSchemaSet set = new XmlSchemaSet();
             foreach (String argString in args)
             {
                 // Split into path and wildcard
@@ -29,15 +31,15 @@ namespace check_schema
                 if (string.IsNullOrEmpty(path))
                     path = ".";
                 String[] fileList = System.IO.Directory.GetFiles(path, filenameOnly);
-                XmlSchemaSet set = new XmlSchemaSet();
-                List<string> toValidate = new List<string>();
+               
+               
                 foreach (String fileName in fileList)
                 {
                     try
                     {
                         if (string.Compare(Path.GetExtension(fileName), ".xsd", true) == 0)
                         {
-                            Console.Error.WriteLine("Collecting {0} as schema file", fileName);
+                            Console.WriteLine("Collecting {0} as schema file", fileName);
                             set.Add(XmlSchema.Read(XmlReader.Create(fileName), new ValidationEventHandler((ss, e) => OnValidateReadSchema(ss, e))));
                         }
                         else
@@ -50,13 +52,14 @@ namespace check_schema
                         Console.Error.WriteLine(e.Message);
                     }
                 }
-                //validate
-                foreach (string fileName in fileList)
-                {
-                    ValidateOne(set, fileName);
-                }
-                Console.Write(logger.ToString());
+                
             }
+            //validate
+            foreach (string fileName in toValidate)
+            {
+                ValidateOne(set, fileName);
+            }
+            Console.Error.Write(logger.ToString());
         }
 
         private static void ValidateOne(XmlSchemaSet set, string fileName)
